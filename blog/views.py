@@ -18,7 +18,7 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
   
   
-class CommentList(generics.RetrieveUpdateDestroyAPIView):
+class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset= Comment.objects.all()
     serializer_class = CommentSerializer
       
@@ -26,7 +26,7 @@ class TagList(generics.ListCreateAPIView):
     queryset= Tag.objects.all()
     serializer_class = TagSerializer
     
-class TagList(generics.RetrieveUpdateDestroyAPIView):
+class TagDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset= Tag.objects.all()
     serializer_class = TagSerializer
 
