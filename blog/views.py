@@ -9,4 +9,24 @@ class PostList(generics.ListCreateAPIView):
     queryset= Post.objects.all()
     serializer_class = PostSerializer
     
+class PostDetail(generics.RetrieveAPIView):
+    queryset= Post.objects.all()
+    serializer_class = PostSerializer
+    
+class CommentList(generics.ListCreateAPIView):
+    queryset= Comment.objects.all()
+    serializer_class = CommentSerializer
+  
+  
+class CommentList(generics.RetrieveUpdateDestroyAPIView):
+    queryset= Comment.objects.all()
+    serializer_class = CommentSerializer
+      
+class TagList(generics.ListCreateAPIView):
+    queryset= Tag.objects.all()
+    serializer_class = TagSerializer
+    
+class TagList(generics.RetrieveUpdateDestroyAPIView):
+    queryset= Tag.objects.all()
+    serializer_class = TagSerializer
 
