@@ -30,15 +30,17 @@ class Command(BaseCommand):
             post = Post.objects.create(
                 
                 title = fake.sentence(),
-                content = " ".json(fake.paragraphs(nb=3)),
+                content = " ".join(fake.paragraphs(nb=3)),
                 author = random.choice(users),
             )
-            post.tags.set(random.sample(tags,random.randint(1,len(tags)-1)))
+            post.tags.set(random.sample(tags,random.randint(1,len(tags))))
+            
+        posts = Post.objects.all()
         for _ in range(470):
             Comment.objects.create(
                 content = fake.paragraph(),
                 author = random.choice(users),
-                post = random.choice(post)
+                post = random.choice(posts)
             ) 
             
         self.stdout.write(self.style.SUCCESS('database populated with dummy dataaa'))
